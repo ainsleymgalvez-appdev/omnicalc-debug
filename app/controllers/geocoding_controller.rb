@@ -1,7 +1,7 @@
 class GeocodingController < ApplicationController
 
   def street_to_coords
-    @street_address = params.fetch("user_street_input")
+    @street_address = params.fetch("user_street")
     
     maps_key = ENV.fetch("GEOCODING_API_KEY")
 
@@ -12,11 +12,13 @@ class GeocodingController < ApplicationController
     parsed_data = JSON.parse(api_response)
 
     first_result = parsed_data.fetch("results").at(0)
-    location = first_result.fetch("geometry").fetch("location")
+    location = first_result.fetch("geometry")
+    
+    location_2 = location.fetch("location")
 
-    @latitude = location.fetch("lat")
+    @latitude = location_2.fetch("lat")
 
-    @longitude = location.fetch("lng")
+    @longitude = location_2.fetch("lng")
 
     render({ :template => "geocoding_templates/street_to_coords_results.html.erb"})
   end

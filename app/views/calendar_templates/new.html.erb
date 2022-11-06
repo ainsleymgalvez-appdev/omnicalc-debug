@@ -1,23 +1,29 @@
-<form action="/">
+<form action="/calendar_invite/results">
+
   <div>
     <label for="event_name">Name</label>
-    <input type="text" id="name">
+    <input type="text" name="event_name" id="event_name">
   </div>
+
   <div>
-    <label for="details">Details</label>
-    <input type="text" name="details" id="event_details">
+    <label for="detail">Details</label>
+    <input type="text" name="detail" id="detail">
   </div>
+
   <div>
     <label for="event_location">Location</label>
-    <input type="text" name="event_location" id="location">
+    <input type="text" name="event_location" id="event_location">
   </div>
+
   <div>
-    <label for="event_begins">Start time</label>
-    <input type="datetime-local" name="event_begins" id="event_begins">
+    <label for="start_time">Start time</label>
+    <input type="datetime-local" name="start_time" id="start_time">
   </div>
+
   <div>
-    <label for="event_ends">End time</label>
-    <input type="datetime-local" name="end_date" id="event_begins">
+    <label for="end_time">End time</label>
+    <input type="datetime-local" name="end_time" id="end_time">
   </div>
+
   <button>Generate</button>
 </form>

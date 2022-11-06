@@ -1,7 +1,7 @@
 class ForecastController < ApplicationController
   def coords_to_weather
-    @lat = params.fetch("user_latitude")
-    @lng = params.fetch("user_longitude")
+    @lat = params.fetch("latitude")
+    @lng = params.fetch("longitude")
 
     key = ENV.fetch("DARK_SKY_KEY")
 
